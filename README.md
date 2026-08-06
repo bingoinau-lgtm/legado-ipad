@@ -1,28 +1,50 @@
 # Legado iPad
 
-阅读（Legado）的 **iPad 端**独立仓库。
+SwiftUI 原生 iPad 客户端（[bingoinau-lgtm/legado-ipad](https://github.com/bingoinau-lgtm/legado-ipad)）。
 
-- Android 主仓：[`Jingshiro/legado`](https://github.com/Jingshiro/legado)（本地：`../legado`）
-- 本仓：iPad / iPadOS 客户端（新建，与 Android 解耦）
+一期采用 **伴侣模式**：iPad 连接同一局域网内 Android「阅读」App 的 Web 服务（默认 `http://手机IP:1122`），同步书架并阅读。
 
-## 目录关系
+参考实现：本地 `../legado`（Jingshiro/legado 共享源仓）。
+
+## 环境
+
+- macOS + Xcode 16+
+- iPad（真机或模拟器；真机连手机时需同一 Wi‑Fi）
+- 手机端开启阅读 Web 服务
+
+## 打开工程
+
+```bash
+cd /Users/bingo/Documents/Legado/legado-ipad
+# 若修改了 project.yml，重新生成：
+# /path/to/xcodegen generate
+open LegadoiPad.xcodeproj
+```
+
+在 Xcode 中选择目标设备 → Run。
+
+## 当前功能（MVP）
+
+- 配置手机 IP / 端口并测试连接
+- 拉取书架、搜索、下拉刷新
+- 打开书籍：目录、正文、上一章/下一章
+- 自动回写阅读进度到手机（`/saveBookProgress`）
+
+## 目录
 
 ```
-Documents/Legado/
-├── legado/        # Android 主工程（已有）
-└── legado-ipad/   # 本仓库（iPad）
+LegadoiPad/
+  App/           # 根导航与全局状态
+  Core/          # API 模型与网络客户端
+  Features/      # 连接 / 书架 / 阅读
 ```
 
-## 待确认（开工前）
+## 后续方向
 
-| 项 | 选项 |
-|----|------|
-| 形态 | A SwiftUI 原生 / B Web·PWA / C Capacitor 套壳 |
-| 模式 | 伴侣（连手机 Web API:1122）/ 单机（自带解析） |
-| 一期 | MVP：书架 + 阅读 + 进度；其余二期 |
-
-确认后按选型初始化工程骨架。
+- 单机模式（本地书 / 书源解析）
+- 想法批注、阅读记录、AI 助手等增强能力
+- UI 针对 iPad 分栏与键盘进一步打磨
 
 ## 许可
 
-与上游一致，计划采用 GPL-3.0（最终以 LICENSE 为准）。
+GPL-3.0（与上游阅读项目对齐，完整 LICENSE 稍后补齐）。

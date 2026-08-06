@@ -1,0 +1,7 @@
+# XcodeGen
+.DS_Store
+xcuserdata/
+*.xcuserstate
+DerivedData/
+build/
+.swiftpm/

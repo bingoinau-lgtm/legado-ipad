@@ -1,0 +1,427 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		043AB0F2C2D8F412066D04CF /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C3B624079018E36E07F299 /* AppState.swift */; };
+		0FCC70684297A775E3136D38 /* BookshelfViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE2EF1189761BE589A0E81E /* BookshelfViewModel.swift */; };
+		13D0EECB828D4493C304D981 /* ReaderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB1182BD6BC19A86F213852 /* ReaderViewModel.swift */; };
+		2C303D912F17085E3E260F07 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E6537BF4628DEF626918C5 /* RootView.swift */; };
+		555175F2CA43135AD7BB4B0E /* ReaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7405646143B9D35F2048813 /* ReaderView.swift */; };
+		5DD9EDF3951F4C0DE03AA6A4 /* LegadoAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29854164D507F71EC5980DB2 /* LegadoAPIClient.swift */; };
+		61BE133309CCB292E6748A9A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B25C2245A61DEC487D09B531 /* Assets.xcassets */; };
+		80630EB6E76C7B7C7A94C232 /* BookshelfView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02397A1D32F5CF838778925 /* BookshelfView.swift */; };
+		934C5BE455C4B90E588A737B /* ServerConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F969D3B52078F456BF5F4C /* ServerConfig.swift */; };
+		AB7759138AB34C3BC78DBB28 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = A63C3F40B1FE614F4EB8F0FA /* Book.swift */; };
+		B764751D74FD84EA5A0861B8 /* LegadoiPadApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D4011AE0FC3A5C3EA216069 /* LegadoiPadApp.swift */; };
+		BA9D25F1E91B52A1CC50EF30 /* ConnectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49603A203E6216484229AF2 /* ConnectionView.swift */; };
+		E99B4E3807B4C1B5B0FDAF9A /* APIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E79B2CABD9E2BFDA69BE2F5 /* APIResponse.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0EE2EF1189761BE589A0E81E /* BookshelfViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookshelfViewModel.swift; sourceTree = "<group>"; };
+		15004F6E3DFBFEF9A3251552 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		1D4011AE0FC3A5C3EA216069 /* LegadoiPadApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegadoiPadApp.swift; sourceTree = "<group>"; };
+		29854164D507F71EC5980DB2 /* LegadoAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegadoAPIClient.swift; sourceTree = "<group>"; };
+		2FB1182BD6BC19A86F213852 /* ReaderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReaderViewModel.swift; sourceTree = "<group>"; };
+		5E79B2CABD9E2BFDA69BE2F5 /* APIResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIResponse.swift; sourceTree = "<group>"; };
+		A0E6537BF4628DEF626918C5 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		A63C3F40B1FE614F4EB8F0FA /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
+		B25C2245A61DEC487D09B531 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CCB61D29087C308115B6066E /* LegadoiPad.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = LegadoiPad.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D02397A1D32F5CF838778925 /* BookshelfView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookshelfView.swift; sourceTree = "<group>"; };
+		D4F969D3B52078F456BF5F4C /* ServerConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerConfig.swift; sourceTree = "<group>"; };
+		F49603A203E6216484229AF2 /* ConnectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionView.swift; sourceTree = "<group>"; };
+		F7405646143B9D35F2048813 /* ReaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReaderView.swift; sourceTree = "<group>"; };
+		F7C3B624079018E36E07F299 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		382691ACE0836CB63891DF73 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				F7C3B624079018E36E07F299 /* AppState.swift */,
+				A0E6537BF4628DEF626918C5 /* RootView.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		3F3E79112437BBE306A16677 /* Reader */ = {
+			isa = PBXGroup;
+			children = (
+				F7405646143B9D35F2048813 /* ReaderView.swift */,
+				2FB1182BD6BC19A86F213852 /* ReaderViewModel.swift */,
+			);
+			path = Reader;
+			sourceTree = "<group>";
+		};
+		47662A61B4534CCC5B3AA5A7 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				5E79B2CABD9E2BFDA69BE2F5 /* APIResponse.swift */,
+				A63C3F40B1FE614F4EB8F0FA /* Book.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		54788D7AA9D2CFFEC2118F8D /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				7BAE74E13B28FD7607EE1EBD /* Bookshelf */,
+				DA5DB42AC95945B378B0472D /* Connection */,
+				3F3E79112437BBE306A16677 /* Reader */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		7351AF6EE38CC6CE011D0401 = {
+			isa = PBXGroup;
+			children = (
+				A960D14BABC20786E2F9BB1B /* LegadoiPad */,
+				765C4B072A1DA9C43D92175A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		765C4B072A1DA9C43D92175A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CCB61D29087C308115B6066E /* LegadoiPad.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7BAE74E13B28FD7607EE1EBD /* Bookshelf */ = {
+			isa = PBXGroup;
+			children = (
+				D02397A1D32F5CF838778925 /* BookshelfView.swift */,
+				0EE2EF1189761BE589A0E81E /* BookshelfViewModel.swift */,
+			);
+			path = Bookshelf;
+			sourceTree = "<group>";
+		};
+		A1752DE210AA750A2A524F6E /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				47662A61B4534CCC5B3AA5A7 /* Models */,
+				F9B5118070C3E1385AEE96D4 /* Network */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		A960D14BABC20786E2F9BB1B /* LegadoiPad */ = {
+			isa = PBXGroup;
+			children = (
+				B25C2245A61DEC487D09B531 /* Assets.xcassets */,
+				15004F6E3DFBFEF9A3251552 /* Info.plist */,
+				1D4011AE0FC3A5C3EA216069 /* LegadoiPadApp.swift */,
+				382691ACE0836CB63891DF73 /* App */,
+				A1752DE210AA750A2A524F6E /* Core */,
+				54788D7AA9D2CFFEC2118F8D /* Features */,
+			);
+			path = LegadoiPad;
+			sourceTree = "<group>";
+		};
+		DA5DB42AC95945B378B0472D /* Connection */ = {
+			isa = PBXGroup;
+			children = (
+				F49603A203E6216484229AF2 /* ConnectionView.swift */,
+			);
+			path = Connection;
+			sourceTree = "<group>";
+		};
+		F9B5118070C3E1385AEE96D4 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				29854164D507F71EC5980DB2 /* LegadoAPIClient.swift */,
+				D4F969D3B52078F456BF5F4C /* ServerConfig.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		81E60496DD25AAC3F807C375 /* LegadoiPad */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DBFC5FA2C7667D7336FD6DAA /* Build configuration list for PBXNativeTarget "LegadoiPad" */;
+			buildPhases = (
+				A71A5386FB3CCFF49590AB9B /* Sources */,
+				13B2A66326C0FF0C869B0F55 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LegadoiPad;
+			packageProductDependencies = (
+			);
+			productName = LegadoiPad;
+			productReference = CCB61D29087C308115B6066E /* LegadoiPad.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		852065E1DE14D06BCF87447F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1600;
+				TargetAttributes = {
+					81E60496DD25AAC3F807C375 = {
+						DevelopmentTeam = "";
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = D9D7D02934EB6D853A155410 /* Build configuration list for PBXProject "LegadoiPad" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = 7351AF6EE38CC6CE011D0401;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				81E60496DD25AAC3F807C375 /* LegadoiPad */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		13B2A66326C0FF0C869B0F55 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				61BE133309CCB292E6748A9A /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A71A5386FB3CCFF49590AB9B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E99B4E3807B4C1B5B0FDAF9A /* APIResponse.swift in Sources */,
+				043AB0F2C2D8F412066D04CF /* AppState.swift in Sources */,
+				AB7759138AB34C3BC78DBB28 /* Book.swift in Sources */,
+				80630EB6E76C7B7C7A94C232 /* BookshelfView.swift in Sources */,
+				0FCC70684297A775E3136D38 /* BookshelfViewModel.swift in Sources */,
+				BA9D25F1E91B52A1CC50EF30 /* ConnectionView.swift in Sources */,
+				5DD9EDF3951F4C0DE03AA6A4 /* LegadoAPIClient.swift in Sources */,
+				B764751D74FD84EA5A0861B8 /* LegadoiPadApp.swift in Sources */,
+				555175F2CA43135AD7BB4B0E /* ReaderView.swift in Sources */,
+				13D0EECB828D4493C304D981 /* ReaderViewModel.swift in Sources */,
+				2C303D912F17085E3E260F07 /* RootView.swift in Sources */,
+				934C5BE455C4B90E588A737B /* ServerConfig.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		0E615FDC9C2CAA4A793DEF5B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = "";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		2ED71D184E3474B3BFD017BF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		89F3EA6DDFF9E72AF7204084 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = LegadoiPad/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 0.1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bingoinau.legadoipad;
+				SDKROOT = iphoneos;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPAD = NO;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		B0FF6348F6E694C6C125B7D7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = LegadoiPad/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 0.1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bingoinau.legadoipad;
+				SDKROOT = iphoneos;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPAD = NO;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D9D7D02934EB6D853A155410 /* Build configuration list for PBXProject "LegadoiPad" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2ED71D184E3474B3BFD017BF /* Debug */,
+				0E615FDC9C2CAA4A793DEF5B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		DBFC5FA2C7667D7336FD6DAA /* Build configuration list for PBXNativeTarget "LegadoiPad" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B0FF6348F6E694C6C125B7D7 /* Debug */,
+				89F3EA6DDFF9E72AF7204084 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 852065E1DE14D06BCF87447F /* Project object */;
+}
