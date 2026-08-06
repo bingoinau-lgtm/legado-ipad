@@ -22,11 +22,6 @@ enum SidebarDestination: String, CaseIterable, Identifiable, Hashable {
     }
 }
 
-enum RssSelection: Hashable {
-    case local(LocalRssFeed)
-    case phone(RssSource)
-}
-
 @MainActor
 final class AppState: ObservableObject {
     @Published var serverConfig: ServerConfig
