@@ -11,6 +11,8 @@
 		0FCC70684297A775E3136D38 /* BookshelfViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE2EF1189761BE589A0E81E /* BookshelfViewModel.swift */; };
 		13D0EECB828D4493C304D981 /* ReaderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB1182BD6BC19A86F213852 /* ReaderViewModel.swift */; };
 		2C303D912F17085E3E260F07 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E6537BF4628DEF626918C5 /* RootView.swift */; };
+		30BDABA2D45295B493FFBDB6 /* RssSourcesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 237FEC324475DA8D6348E274 /* RssSourcesViewModel.swift */; };
+		3E6D25649FDCD520586554DD /* RssSourcesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F038FC10C7743A0E795699 /* RssSourcesView.swift */; };
 		555175F2CA43135AD7BB4B0E /* ReaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7405646143B9D35F2048813 /* ReaderView.swift */; };
 		5DD9EDF3951F4C0DE03AA6A4 /* LegadoAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29854164D507F71EC5980DB2 /* LegadoAPIClient.swift */; };
 		61BE133309CCB292E6748A9A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B25C2245A61DEC487D09B531 /* Assets.xcassets */; };
@@ -19,15 +21,19 @@
 		AB7759138AB34C3BC78DBB28 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = A63C3F40B1FE614F4EB8F0FA /* Book.swift */; };
 		B764751D74FD84EA5A0861B8 /* LegadoiPadApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D4011AE0FC3A5C3EA216069 /* LegadoiPadApp.swift */; };
 		BA9D25F1E91B52A1CC50EF30 /* ConnectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49603A203E6216484229AF2 /* ConnectionView.swift */; };
+		D95E75512EC2AAF063A8DE38 /* RssSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BB66BEE5D8AD4FF9DB5B145 /* RssSource.swift */; };
 		E99B4E3807B4C1B5B0FDAF9A /* APIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E79B2CABD9E2BFDA69BE2F5 /* APIResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0EE2EF1189761BE589A0E81E /* BookshelfViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookshelfViewModel.swift; sourceTree = "<group>"; };
 		15004F6E3DFBFEF9A3251552 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		1BB66BEE5D8AD4FF9DB5B145 /* RssSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RssSource.swift; sourceTree = "<group>"; };
 		1D4011AE0FC3A5C3EA216069 /* LegadoiPadApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegadoiPadApp.swift; sourceTree = "<group>"; };
+		237FEC324475DA8D6348E274 /* RssSourcesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RssSourcesViewModel.swift; sourceTree = "<group>"; };
 		29854164D507F71EC5980DB2 /* LegadoAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegadoAPIClient.swift; sourceTree = "<group>"; };
 		2FB1182BD6BC19A86F213852 /* ReaderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReaderViewModel.swift; sourceTree = "<group>"; };
+		44F038FC10C7743A0E795699 /* RssSourcesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RssSourcesView.swift; sourceTree = "<group>"; };
 		5E79B2CABD9E2BFDA69BE2F5 /* APIResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIResponse.swift; sourceTree = "<group>"; };
 		A0E6537BF4628DEF626918C5 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		A63C3F40B1FE614F4EB8F0FA /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
@@ -64,6 +70,7 @@
 			children = (
 				5E79B2CABD9E2BFDA69BE2F5 /* APIResponse.swift */,
 				A63C3F40B1FE614F4EB8F0FA /* Book.swift */,
+				1BB66BEE5D8AD4FF9DB5B145 /* RssSource.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -74,6 +81,7 @@
 				7BAE74E13B28FD7607EE1EBD /* Bookshelf */,
 				DA5DB42AC95945B378B0472D /* Connection */,
 				3F3E79112437BBE306A16677 /* Reader */,
+				E536043ACB93AB388B523AFA /* Rss */,
 			);
 			path = Features;
 			sourceTree = "<group>";
@@ -131,6 +139,15 @@
 				F49603A203E6216484229AF2 /* ConnectionView.swift */,
 			);
 			path = Connection;
+			sourceTree = "<group>";
+		};
+		E536043ACB93AB388B523AFA /* Rss */ = {
+			isa = PBXGroup;
+			children = (
+				44F038FC10C7743A0E795699 /* RssSourcesView.swift */,
+				237FEC324475DA8D6348E274 /* RssSourcesViewModel.swift */,
+			);
+			path = Rss;
 			sourceTree = "<group>";
 		};
 		F9B5118070C3E1385AEE96D4 /* Network */ = {
@@ -224,6 +241,9 @@
 				555175F2CA43135AD7BB4B0E /* ReaderView.swift in Sources */,
 				13D0EECB828D4493C304D981 /* ReaderViewModel.swift in Sources */,
 				2C303D912F17085E3E260F07 /* RootView.swift in Sources */,
+				D95E75512EC2AAF063A8DE38 /* RssSource.swift in Sources */,
+				3E6D25649FDCD520586554DD /* RssSourcesView.swift in Sources */,
+				30BDABA2D45295B493FFBDB6 /* RssSourcesViewModel.swift in Sources */,
 				934C5BE455C4B90E588A737B /* ServerConfig.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -286,7 +306,7 @@
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Release;
 		};
@@ -352,7 +372,7 @@
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
 		};
@@ -365,6 +385,8 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = LegadoiPad/Info.plist;
+				INFOPLIST_KEY_LSRequiresIPhoneOS = NO;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -374,7 +396,8 @@
 				SDKROOT = iphoneos;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SUPPORTS_XR_DESIGNED_FOR_IPAD = NO;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 2;
+				"TARGETED_DEVICE_FAMILY[sdk=iphoneos*]" = 2;
 			};
 			name = Release;
 		};
@@ -387,6 +410,8 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = LegadoiPad/Info.plist;
+				INFOPLIST_KEY_LSRequiresIPhoneOS = NO;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -396,7 +421,8 @@
 				SDKROOT = iphoneos;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SUPPORTS_XR_DESIGNED_FOR_IPAD = NO;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 2;
+				"TARGETED_DEVICE_FAMILY[sdk=iphoneos*]" = 2;
 			};
 			name = Debug;
 		};

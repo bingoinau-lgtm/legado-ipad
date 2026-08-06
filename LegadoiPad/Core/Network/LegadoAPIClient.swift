@@ -35,6 +35,10 @@ actor LegadoAPIClient {
         let _: OK? = try await postOptional(path: "/saveBookProgress", body: progress)
     }
 
+    func getRssSources() async throws -> [RssSource] {
+        try await get(path: "/getRssSources")
+    }
+
     // MARK: - Private
 
     private func get<T: Decodable>(path: String, query: [String: String] = [:]) async throws -> T {

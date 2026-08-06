@@ -9,7 +9,7 @@ SwiftUI 原生 iPad 客户端（[bingoinau-lgtm/legado-ipad](https://github.com/
 ## 环境
 
 - macOS + Xcode 16+
-- iPad（真机或模拟器；真机连手机时需同一 Wi‑Fi）
+- **仅 iPad**（真机或模拟器；真机连手机时需同一 Wi‑Fi）
 - 手机端开启阅读 Web 服务
 
 ## 打开工程
@@ -29,6 +29,7 @@ open LegadoiPad.xcodeproj
 - 拉取书架、搜索、下拉刷新
 - 打开书籍：目录、正文、上一章/下一章
 - 自动回写阅读进度到手机（`/saveBookProgress`）
+- **订阅**：拉取订阅源列表（`/getRssSources`），按分组展示与查看详情（文章阅读后续再做）
 
 ## 目录
 
