@@ -38,8 +38,6 @@
 				<true/>
 				<key>NSIncludesSubdomains</key>
 				<true/>
-				<key>NSExceptionMinimumTLSVersion</key>
-				<string>TLSv1.0</string>
 			</dict>
 			<key>yckceo.com</key>
 			<dict>
