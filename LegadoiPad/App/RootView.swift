@@ -14,30 +14,31 @@ struct RootView: View {
 
     @ViewBuilder
     private var detailContent: some View {
-        if !appState.isConnected {
-            ConnectionView()
-        } else {
-            switch appState.sidebarDestination {
-            case .bookshelf:
-                if let book = appState.selectedBook {
-                    ReaderView(book: book)
-                } else {
-                    ContentUnavailableView(
-                        "选择一本书开始阅读",
-                        systemImage: "book.closed",
-                        description: Text("从左侧书架打开书籍")
-                    )
-                }
-            case .rss:
-                if let source = appState.selectedRssSource {
-                    RssSourceDetailView(source: source)
-                } else {
-                    ContentUnavailableView(
-                        "选择一个订阅源",
-                        systemImage: "dot.radiowaves.up.forward",
-                        description: Text("从左侧订阅列表查看详情")
-                    )
-                }
+        switch appState.sidebarDestination {
+        case .bookshelf:
+            if !appState.isConnected {
+                ConnectionView()
+            } else if let book = appState.selectedBook {
+                ReaderView(book: book)
+            } else {
+                ContentUnavailableView(
+                    "选择一本书开始阅读",
+                    systemImage: "book.closed",
+                    description: Text("从左侧书架打开书籍；书架仍需连接手机 Web 服务")
+                )
+            }
+        case .rss:
+            switch appState.rssSelection {
+            case .local(let feed):
+                LocalRssFeedDetailView(feed: feed)
+            case .phone(let source):
+                PhoneRssSourceDetailView(source: source)
+            case nil:
+                ContentUnavailableView(
+                    "本机订阅",
+                    systemImage: "dot.radiowaves.up.forward",
+                    description: Text("点左上角 + 添加网上的 RSS / Atom 地址，无需连接手机")
+                )
             }
         }
     }
@@ -60,19 +61,19 @@ private struct SidebarView: View {
             .padding(.vertical, 12)
 
             Group {
-                if appState.isConnected {
-                    switch appState.sidebarDestination {
-                    case .bookshelf:
+                switch appState.sidebarDestination {
+                case .bookshelf:
+                    if appState.isConnected {
                         BookshelfView()
-                    case .rss:
-                        RssSourcesView()
+                    } else {
+                        ContentUnavailableView(
+                            "书架需要连接手机",
+                            systemImage: "wifi.exclamationmark",
+                            description: Text("订阅可直接使用网上 RSS，无需连接")
+                        )
                     }
-                } else {
-                    ContentUnavailableView(
-                        "尚未连接服务",
-                        systemImage: "wifi.exclamationmark",
-                        description: Text("请先配置阅读 Web 服务地址")
-                    )
+                case .rss:
+                    LocalRssFeedsView()
                 }
             }
         }
@@ -82,7 +83,10 @@ private struct SidebarView: View {
                 Button {
                     showConnection = true
                 } label: {
-                    Label("连接", systemImage: "link")
+                    Label(
+                        appState.isConnected ? "已连接" : "连接",
+                        systemImage: appState.isConnected ? "link.circle.fill" : "link"
+                    )
                 }
             }
         }

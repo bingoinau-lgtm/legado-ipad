@@ -12,16 +12,20 @@
 		13D0EECB828D4493C304D981 /* ReaderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB1182BD6BC19A86F213852 /* ReaderViewModel.swift */; };
 		2C303D912F17085E3E260F07 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E6537BF4628DEF626918C5 /* RootView.swift */; };
 		30BDABA2D45295B493FFBDB6 /* RssSourcesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 237FEC324475DA8D6348E274 /* RssSourcesViewModel.swift */; };
-		3E6D25649FDCD520586554DD /* RssSourcesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F038FC10C7743A0E795699 /* RssSourcesView.swift */; };
 		555175F2CA43135AD7BB4B0E /* ReaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7405646143B9D35F2048813 /* ReaderView.swift */; };
 		5DD9EDF3951F4C0DE03AA6A4 /* LegadoAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29854164D507F71EC5980DB2 /* LegadoAPIClient.swift */; };
 		61BE133309CCB292E6748A9A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B25C2245A61DEC487D09B531 /* Assets.xcassets */; };
+		66254D4B62ADE60D876BC123 /* LocalRssViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751430E72258DD82CFB9D88E /* LocalRssViewModel.swift */; };
+		73C77E8DB72AE98C0D4DABA7 /* LocalRssFeedStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838A54917F60221DFBD09CAD /* LocalRssFeedStore.swift */; };
 		80630EB6E76C7B7C7A94C232 /* BookshelfView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02397A1D32F5CF838778925 /* BookshelfView.swift */; };
 		934C5BE455C4B90E588A737B /* ServerConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F969D3B52078F456BF5F4C /* ServerConfig.swift */; };
 		AB7759138AB34C3BC78DBB28 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = A63C3F40B1FE614F4EB8F0FA /* Book.swift */; };
 		B764751D74FD84EA5A0861B8 /* LegadoiPadApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D4011AE0FC3A5C3EA216069 /* LegadoiPadApp.swift */; };
 		BA9D25F1E91B52A1CC50EF30 /* ConnectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49603A203E6216484229AF2 /* ConnectionView.swift */; };
+		C6B534944291B353AB370544 /* LocalRssFeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D77217E9F032B10519B32F8 /* LocalRssFeed.swift */; };
+		E34A944938130D492B5949F3 /* LocalRssFeedsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31305B9747BEF50B5BA92F0 /* LocalRssFeedsView.swift */; };
 		E99B4E3807B4C1B5B0FDAF9A /* APIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E79B2CABD9E2BFDA69BE2F5 /* APIResponse.swift */; };
+		FDA82029BE0A267CD6D106F2 /* RssFeedClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66502826739134A48B6DB83A /* RssFeedClient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,11 +35,15 @@
 		237FEC324475DA8D6348E274 /* RssSourcesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RssSourcesViewModel.swift; sourceTree = "<group>"; };
 		29854164D507F71EC5980DB2 /* LegadoAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegadoAPIClient.swift; sourceTree = "<group>"; };
 		2FB1182BD6BC19A86F213852 /* ReaderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReaderViewModel.swift; sourceTree = "<group>"; };
-		44F038FC10C7743A0E795699 /* RssSourcesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RssSourcesView.swift; sourceTree = "<group>"; };
 		5E79B2CABD9E2BFDA69BE2F5 /* APIResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIResponse.swift; sourceTree = "<group>"; };
+		66502826739134A48B6DB83A /* RssFeedClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RssFeedClient.swift; sourceTree = "<group>"; };
+		751430E72258DD82CFB9D88E /* LocalRssViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalRssViewModel.swift; sourceTree = "<group>"; };
+		838A54917F60221DFBD09CAD /* LocalRssFeedStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalRssFeedStore.swift; sourceTree = "<group>"; };
+		9D77217E9F032B10519B32F8 /* LocalRssFeed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalRssFeed.swift; sourceTree = "<group>"; };
 		A0E6537BF4628DEF626918C5 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		A63C3F40B1FE614F4EB8F0FA /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 		B25C2245A61DEC487D09B531 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B31305B9747BEF50B5BA92F0 /* LocalRssFeedsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalRssFeedsView.swift; sourceTree = "<group>"; };
 		CCB61D29087C308115B6066E /* LegadoiPad.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = LegadoiPad.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D02397A1D32F5CF838778925 /* BookshelfView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookshelfView.swift; sourceTree = "<group>"; };
 		D4F969D3B52078F456BF5F4C /* ServerConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerConfig.swift; sourceTree = "<group>"; };
@@ -68,6 +76,7 @@
 			children = (
 				5E79B2CABD9E2BFDA69BE2F5 /* APIResponse.swift */,
 				A63C3F40B1FE614F4EB8F0FA /* Book.swift */,
+				9D77217E9F032B10519B32F8 /* LocalRssFeed.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -141,7 +150,8 @@
 		E536043ACB93AB388B523AFA /* Rss */ = {
 			isa = PBXGroup;
 			children = (
-				44F038FC10C7743A0E795699 /* RssSourcesView.swift */,
+				B31305B9747BEF50B5BA92F0 /* LocalRssFeedsView.swift */,
+				751430E72258DD82CFB9D88E /* LocalRssViewModel.swift */,
 				237FEC324475DA8D6348E274 /* RssSourcesViewModel.swift */,
 			);
 			path = Rss;
@@ -151,6 +161,8 @@
 			isa = PBXGroup;
 			children = (
 				29854164D507F71EC5980DB2 /* LegadoAPIClient.swift */,
+				838A54917F60221DFBD09CAD /* LocalRssFeedStore.swift */,
+				66502826739134A48B6DB83A /* RssFeedClient.swift */,
 				D4F969D3B52078F456BF5F4C /* ServerConfig.swift */,
 			);
 			path = Network;
@@ -235,10 +247,14 @@
 				BA9D25F1E91B52A1CC50EF30 /* ConnectionView.swift in Sources */,
 				5DD9EDF3951F4C0DE03AA6A4 /* LegadoAPIClient.swift in Sources */,
 				B764751D74FD84EA5A0861B8 /* LegadoiPadApp.swift in Sources */,
+				C6B534944291B353AB370544 /* LocalRssFeed.swift in Sources */,
+				73C77E8DB72AE98C0D4DABA7 /* LocalRssFeedStore.swift in Sources */,
+				E34A944938130D492B5949F3 /* LocalRssFeedsView.swift in Sources */,
+				66254D4B62ADE60D876BC123 /* LocalRssViewModel.swift in Sources */,
 				555175F2CA43135AD7BB4B0E /* ReaderView.swift in Sources */,
 				13D0EECB828D4493C304D981 /* ReaderViewModel.swift in Sources */,
 				2C303D912F17085E3E260F07 /* RootView.swift in Sources */,
-				3E6D25649FDCD520586554DD /* RssSourcesView.swift in Sources */,
+				FDA82029BE0A267CD6D106F2 /* RssFeedClient.swift in Sources */,
 				30BDABA2D45295B493FFBDB6 /* RssSourcesViewModel.swift in Sources */,
 				934C5BE455C4B90E588A737B /* ServerConfig.swift in Sources */,
 			);

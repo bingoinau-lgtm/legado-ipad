@@ -22,14 +22,19 @@ enum SidebarDestination: String, CaseIterable, Identifiable, Hashable {
     }
 }
 
+enum RssSelection: Hashable {
+    case local(LocalRssFeed)
+    case phone(RssSource)
+}
+
 @MainActor
 final class AppState: ObservableObject {
     @Published var serverConfig: ServerConfig
     @Published var isConnected = false
     @Published var connectionMessage: String?
-    @Published var sidebarDestination: SidebarDestination = .bookshelf
+    @Published var sidebarDestination: SidebarDestination = .rss
     @Published var selectedBook: Book?
-    @Published var selectedRssSource: RssSource?
+    @Published var rssSelection: RssSelection?
 
     let api: LegadoAPIClient
 
@@ -43,7 +48,7 @@ final class AppState: ObservableObject {
         guard sidebarDestination != destination else { return }
         sidebarDestination = destination
         selectedBook = nil
-        selectedRssSource = nil
+        rssSelection = nil
     }
 
     func updateServer(host: String, port: Int) async {
@@ -56,7 +61,7 @@ final class AppState: ObservableObject {
         isConnected = false
         connectionMessage = nil
         selectedBook = nil
-        selectedRssSource = nil
+        rssSelection = nil
     }
 
     func testConnection() async {
