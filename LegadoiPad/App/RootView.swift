@@ -15,6 +15,19 @@ struct RootView: View {
     @ViewBuilder
     private var detailContent: some View {
         switch appState.sidebarDestination {
+        case .bookSource:
+            switch appState.bookSourceSelection {
+            case .source(let source):
+                BookSourceDetailView(source: source)
+            case .book(let book):
+                SourceBookReaderContainer(book: book)
+            case nil:
+                ContentUnavailableView(
+                    "书源阅读",
+                    systemImage: "server.rack",
+                    description: Text("导入书源后搜索或浏览分类，即可直接看书，无需连接手机")
+                )
+            }
         case .bookshelf:
             if !appState.isConnected {
                 ConnectionView()
@@ -52,8 +65,7 @@ private struct SidebarView: View {
         VStack(spacing: 0) {
             Picker("分区", selection: destinationBinding) {
                 ForEach(SidebarDestination.allCases) { destination in
-                    Label(destination.title, systemImage: destination.systemImage)
-                        .tag(destination)
+                    Text(destination.title).tag(destination)
                 }
             }
             .pickerStyle(.segmented)
@@ -62,6 +74,8 @@ private struct SidebarView: View {
 
             Group {
                 switch appState.sidebarDestination {
+                case .bookSource:
+                    BookSourcesHomeView()
                 case .bookshelf:
                     if appState.isConnected {
                         BookshelfView()
@@ -69,7 +83,7 @@ private struct SidebarView: View {
                         ContentUnavailableView(
                             "书架需要连接手机",
                             systemImage: "wifi.exclamationmark",
-                            description: Text("订阅可直接使用网上 RSS，无需连接")
+                            description: Text("书源与订阅可不连手机直接使用")
                         )
                     }
                 case .rss:

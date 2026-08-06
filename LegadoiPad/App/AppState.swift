@@ -2,6 +2,7 @@ import Foundation
 import Combine
 
 enum SidebarDestination: String, CaseIterable, Identifiable, Hashable {
+    case bookSource
     case bookshelf
     case rss
 
@@ -9,6 +10,7 @@ enum SidebarDestination: String, CaseIterable, Identifiable, Hashable {
 
     var title: String {
         switch self {
+        case .bookSource: return "书源"
         case .bookshelf: return "书架"
         case .rss: return "订阅"
         }
@@ -16,6 +18,7 @@ enum SidebarDestination: String, CaseIterable, Identifiable, Hashable {
 
     var systemImage: String {
         switch self {
+        case .bookSource: return "server.rack"
         case .bookshelf: return "books.vertical"
         case .rss: return "dot.radiowaves.up.forward"
         }
@@ -27,9 +30,10 @@ final class AppState: ObservableObject {
     @Published var serverConfig: ServerConfig
     @Published var isConnected = false
     @Published var connectionMessage: String?
-    @Published var sidebarDestination: SidebarDestination = .rss
+    @Published var sidebarDestination: SidebarDestination = .bookSource
     @Published var selectedBook: Book?
     @Published var rssSelection: RssSelection?
+    @Published var bookSourceSelection: BookSourceSelection?
 
     let api: LegadoAPIClient
 
@@ -44,6 +48,7 @@ final class AppState: ObservableObject {
         sidebarDestination = destination
         selectedBook = nil
         rssSelection = nil
+        bookSourceSelection = nil
     }
 
     func updateServer(host: String, port: Int) async {
@@ -57,6 +62,7 @@ final class AppState: ObservableObject {
         connectionMessage = nil
         selectedBook = nil
         rssSelection = nil
+        bookSourceSelection = nil
     }
 
     func testConnection() async {

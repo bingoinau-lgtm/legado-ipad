@@ -142,3 +142,121 @@ enum RssSelection: Hashable {
     case local(LocalRssFeed)
     case phone(RssSource)
 }
+
+// MARK: - Book Source
+
+struct BookSource: Codable, Identifiable, Hashable {
+    var id: String { bookSourceUrl }
+
+    var bookSourceUrl: String
+    var bookSourceName: String
+    var bookSourceGroup: String?
+    var bookSourceComment: String?
+    var bookSourceType: Int?
+    var enabled: Bool?
+    var enabledExplore: Bool?
+    var header: String?
+    var searchUrl: String?
+    var exploreUrl: String?
+    var bookUrlPattern: String?
+    var loginUrl: String?
+    var loginCheckJs: String?
+    var ruleSearch: BookListRule?
+    var ruleExplore: BookListRule?
+    var ruleBookInfo: BookInfoRule?
+    var ruleToc: TocRule?
+    var ruleContent: ContentRule?
+    var customOrder: Int?
+    var respondTime: Int?
+    var weight: Int?
+    var lastUpdateTime: String?
+
+    var isEnabled: Bool { enabled ?? true }
+
+    var displayGroup: String {
+        let group = bookSourceGroup?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
+        return group.isEmpty ? "未分组" : group
+    }
+}
+
+struct BookListRule: Codable, Hashable {
+    var bookList: String?
+    var name: String?
+    var author: String?
+    var intro: String?
+    var kind: String?
+    var lastChapter: String?
+    var bookUrl: String?
+    var coverUrl: String?
+    var wordCount: String?
+}
+
+struct BookInfoRule: Codable, Hashable {
+    var name: String?
+    var author: String?
+    var intro: String?
+    var kind: String?
+    var lastChapter: String?
+    var coverUrl: String?
+    var tocUrl: String?
+    var wordCount: String?
+}
+
+struct TocRule: Codable, Hashable {
+    var chapterList: String?
+    var chapterName: String?
+    var chapterUrl: String?
+    var nextTocUrl: String?
+}
+
+struct ContentRule: Codable, Hashable {
+    var content: String?
+    var nextContentUrl: String?
+    var replaceRegex: String?
+}
+
+struct SourceBook: Identifiable, Hashable {
+    var id: String { bookUrl }
+    var name: String
+    var author: String
+    var bookUrl: String
+    var coverUrl: String?
+    var intro: String?
+    var kind: String?
+    var lastChapter: String?
+    var origin: String
+    var originName: String
+    var tocUrl: String?
+}
+
+struct SourceChapter: Identifiable, Hashable {
+    var id: String { url }
+    var title: String
+    var url: String
+    var index: Int
+}
+
+enum BookSourceError: LocalizedError {
+    case invalidURL
+    case emptyResult(String)
+    case rule(String)
+    case transport(Error)
+
+    var errorDescription: String? {
+        switch self {
+        case .invalidURL:
+            return "地址无效"
+        case .emptyResult(let message):
+            return message
+        case .rule(let message):
+            return message
+        case .transport(let error):
+            return "网络错误：\(error.localizedDescription)"
+        }
+    }
+}
+
+enum BookSourceSelection: Hashable {
+    case source(BookSource)
+    case book(SourceBook)
+}
