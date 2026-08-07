@@ -3,6 +3,10 @@ import SwiftUI
 struct RootView: View {
     @EnvironmentObject private var appState: AppState
 
+    private var isReading: Bool {
+        appState.readingBook != nil
+    }
+
     var body: some View {
         ZStack {
             AppTheme.pageBackground.ignoresSafeArea()
@@ -20,11 +24,16 @@ struct RootView: View {
                 }
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .safeAreaInset(edge: .bottom, spacing: 0) {
-                FloatingTabBar(selection: $appState.selectedTab)
-                    .padding(.horizontal, 28)
-                    .padding(.bottom, 10)
+
+            VStack {
+                Spacer()
+                if !isReading {
+                    FloatingTabBar(selection: $appState.selectedTab)
+                        .transition(.move(edge: .bottom).combined(with: .opacity))
+                        .padding(.bottom, 12)
+                }
             }
+            .animation(.easeInOut(duration: 0.2), value: isReading)
         }
     }
 }
@@ -33,36 +42,40 @@ struct FloatingTabBar: View {
     @Binding var selection: MainTab
 
     var body: some View {
-        HStack(spacing: 4) {
+        HStack(spacing: 0) {
             ForEach(MainTab.allCases) { tab in
                 Button {
                     withAnimation(.easeInOut(duration: 0.15)) {
                         selection = tab
                     }
                 } label: {
-                    VStack(spacing: 4) {
+                    VStack(spacing: 3) {
                         Image(systemName: tab.systemImage)
-                            .font(.system(size: 18, weight: .semibold))
+                            .font(.system(size: 17, weight: .semibold))
                         Text(tab.title)
-                            .font(.system(size: 11, weight: .medium))
+                            .font(.system(size: 10, weight: .medium))
                     }
                     .foregroundStyle(selection == tab ? AppTheme.accent : Color.primary.opacity(0.85))
-                    .frame(maxWidth: .infinity)
-                    .padding(.vertical, 10)
+                    .frame(width: 64, height: 48)
                     .background(
                         Capsule()
                             .fill(selection == tab ? AppTheme.tabHighlight : Color.clear)
+                            .padding(.vertical, 4)
+                            .padding(.horizontal, 2)
                     )
                 }
                 .buttonStyle(.plain)
             }
         }
-        .padding(.horizontal, 10)
-        .padding(.vertical, 8)
+        .padding(.horizontal, 8)
+        .padding(.vertical, 6)
         .background(
             Capsule()
                 .fill(AppTheme.tabBarBackground)
-                .shadow(color: .black.opacity(0.08), radius: 16, y: 4)
+                .shadow(color: .black.opacity(0.10), radius: 14, y: 3)
         )
+        // Keep the pill compact and centered like the mockup.
+        .fixedSize(horizontal: true, vertical: true)
+        .frame(maxWidth: .infinity)
     }
 }
