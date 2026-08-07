@@ -1,26 +1,29 @@
 import Foundation
 import Combine
 
-enum SidebarDestination: String, CaseIterable, Identifiable, Hashable {
-    case bookSource
+enum MainTab: String, CaseIterable, Identifiable, Hashable {
     case bookshelf
-    case rss
+    case discover
+    case explore
+    case mine
 
     var id: String { rawValue }
 
     var title: String {
         switch self {
-        case .bookSource: return "书源"
         case .bookshelf: return "书架"
-        case .rss: return "订阅"
+        case .discover: return "发现"
+        case .explore: return "探索"
+        case .mine: return "我的"
         }
     }
 
     var systemImage: String {
         switch self {
-        case .bookSource: return "server.rack"
-        case .bookshelf: return "books.vertical"
-        case .rss: return "dot.radiowaves.up.forward"
+        case .bookshelf: return "book.closed.fill"
+        case .discover: return "safari.fill"
+        case .explore: return "square.grid.3x3.fill"
+        case .mine: return "person.fill"
         }
     }
 }
@@ -30,10 +33,9 @@ final class AppState: ObservableObject {
     @Published var serverConfig: ServerConfig
     @Published var isConnected = false
     @Published var connectionMessage: String?
-    @Published var sidebarDestination: SidebarDestination = .bookSource
-    @Published var selectedBook: Book?
-    @Published var rssSelection: RssSelection?
-    @Published var bookSourceSelection: BookSourceSelection?
+    @Published var selectedTab: MainTab = .discover
+    @Published var readingBook: SourceBook?
+    @Published var selectedPhoneBook: Book?
 
     let api: LegadoAPIClient
 
@@ -41,14 +43,6 @@ final class AppState: ObservableObject {
         let config = ServerConfig.load()
         self.serverConfig = config
         self.api = LegadoAPIClient(config: config)
-    }
-
-    func selectDestination(_ destination: SidebarDestination) {
-        guard sidebarDestination != destination else { return }
-        sidebarDestination = destination
-        selectedBook = nil
-        rssSelection = nil
-        bookSourceSelection = nil
     }
 
     func updateServer(host: String, port: Int) async {
@@ -60,9 +54,6 @@ final class AppState: ObservableObject {
         await api.update(config: next)
         isConnected = false
         connectionMessage = nil
-        selectedBook = nil
-        rssSelection = nil
-        bookSourceSelection = nil
     }
 
     func testConnection() async {

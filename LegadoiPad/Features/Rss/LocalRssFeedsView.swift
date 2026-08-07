@@ -4,7 +4,6 @@ import SafariServices
 struct LocalRssFeedsView: View {
     @EnvironmentObject private var appState: AppState
     @ObservedObject private var store = LocalRssFeedStore.shared
-    @StateObject private var phoneSources = RssSourcesViewModel()
     @State private var showAddSheet = false
     @State private var searchText = ""
 
@@ -18,7 +17,7 @@ struct LocalRssFeedsView: View {
     }
 
     var body: some View {
-        List(selection: selectionBinding) {
+        List {
             Section {
                 if filteredLocalFeeds.isEmpty {
                     Text("添加网上的 RSS / Atom 地址即可直接阅读，无需连接手机。")
@@ -26,32 +25,18 @@ struct LocalRssFeedsView: View {
                         .foregroundStyle(.secondary)
                 } else {
                     ForEach(filteredLocalFeeds) { feed in
-                        LocalFeedRowView(feed: feed)
-                            .tag(RssSelection.local(feed))
+                        NavigationLink {
+                            LocalRssFeedDetailView(feed: feed)
+                        } label: {
+                            LocalFeedRowView(feed: feed)
+                        }
                     }
                     .onDelete(perform: deleteLocal)
                 }
             } header: {
                 Text("本机订阅")
             }
-
-            if appState.isConnected {
-                Section("手机同步（规则源）") {
-                    if phoneSources.isLoading && phoneSources.sources.isEmpty {
-                        ProgressView()
-                    } else if phoneSources.sources.isEmpty {
-                        Text("手机上暂无订阅源")
-                            .foregroundStyle(.secondary)
-                    } else {
-                        ForEach(phoneSources.sources) { source in
-                            RssSourceRowView(source: source)
-                                .tag(RssSelection.phone(source))
-                        }
-                    }
-                }
-            }
         }
-        .listStyle(.sidebar)
         .searchable(text: $searchText, prompt: "搜索订阅")
         .toolbar {
             ToolbarItem(placement: .primaryAction) {
@@ -66,31 +51,11 @@ struct LocalRssFeedsView: View {
         .sheet(isPresented: $showAddSheet) {
             AddLocalRssFeedSheet()
         }
-        .refreshable {
-            if appState.isConnected {
-                await phoneSources.load(using: appState.api)
-            }
-        }
-        .task(id: appState.isConnected) {
-            if appState.isConnected {
-                await phoneSources.load(using: appState.api)
-            }
-        }
-    }
-
-    private var selectionBinding: Binding<RssSelection?> {
-        Binding(
-            get: { appState.rssSelection },
-            set: { appState.rssSelection = $0 }
-        )
     }
 
     private func deleteLocal(at offsets: IndexSet) {
         let urls = offsets.map { filteredLocalFeeds[$0].feedURL }
         for url in urls {
-            if case .local(let feed) = appState.rssSelection, feed.feedURL == url {
-                appState.rssSelection = nil
-            }
             store.remove(feedURL: url)
         }
     }
@@ -113,41 +78,6 @@ private struct LocalFeedRowView: View {
     }
 }
 
-struct RssSourceRowView: View {
-    let source: RssSource
-
-    var body: some View {
-        HStack(spacing: 12) {
-            AsyncImage(url: URL(string: source.sourceIcon ?? "")) { phase in
-                switch phase {
-                case .success(let image):
-                    image.resizable().scaledToFill()
-                default:
-                    ZStack {
-                        Color.secondary.opacity(0.12)
-                        Image(systemName: "dot.radiowaves.up.forward")
-                            .foregroundStyle(.secondary)
-                    }
-                }
-            }
-            .frame(width: 40, height: 40)
-            .clipShape(RoundedRectangle(cornerRadius: 8, style: .continuous))
-
-            VStack(alignment: .leading, spacing: 4) {
-                Text(source.sourceName)
-                    .font(.headline)
-                    .lineLimit(1)
-                Text(source.sourceUrl)
-                    .font(.caption)
-                    .foregroundStyle(.secondary)
-                    .lineLimit(1)
-            }
-        }
-        .padding(.vertical, 4)
-        .opacity(source.isEnabled ? 1 : 0.55)
-    }
-}
-
 struct AddLocalRssFeedSheet: View {
     @Environment(\.dismiss) private var dismiss
     @ObservedObject private var store = LocalRssFeedStore.shared
@@ -166,7 +96,7 @@ struct AddLocalRssFeedSheet: View {
                 } header: {
                     Text("RSS / Atom 地址")
                 } footer: {
-                    Text("填写网上公开的订阅地址。阅读 App 的「规则订阅源」JSON 仍需手机规则引擎，本机暂不支持。")
+                    Text("填写网上公开的订阅地址。")
                 }
 
                 if let errorMessage {
@@ -307,10 +237,6 @@ struct PhoneRssSourceDetailView: View {
                         .textSelection(.enabled)
                         .foregroundStyle(.secondary)
                 }
-            }
-            Section {
-                Text("这是手机上的阅读「规则订阅源」。要在不连手机时阅读，请改用左侧「本机订阅」添加标准 RSS / Atom 地址。")
-                    .foregroundStyle(.secondary)
             }
         }
         .navigationTitle(source.sourceName)

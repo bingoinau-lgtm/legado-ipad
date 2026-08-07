@@ -215,7 +215,7 @@ struct ContentRule: Codable, Hashable {
     var replaceRegex: String?
 }
 
-struct SourceBook: Identifiable, Hashable {
+struct SourceBook: Codable, Identifiable, Hashable {
     var id: String { bookUrl }
     var name: String
     var author: String
@@ -254,9 +254,4 @@ enum BookSourceError: LocalizedError {
             return "网络错误：\(error.localizedDescription)"
         }
     }
-}
-
-enum BookSourceSelection: Hashable {
-    case source(BookSource)
-    case book(SourceBook)
 }

@@ -8,18 +8,23 @@
 
 /* Begin PBXBuildFile section */
 		043AB0F2C2D8F412066D04CF /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C3B624079018E36E07F299 /* AppState.swift */; };
+		08579EAEB71491C6B6443898 /* LocalBookshelfStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B548FB7B189FF3A22B2F38 /* LocalBookshelfStore.swift */; };
 		0FCC70684297A775E3136D38 /* BookshelfViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE2EF1189761BE589A0E81E /* BookshelfViewModel.swift */; };
 		13D0EECB828D4493C304D981 /* ReaderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB1182BD6BC19A86F213852 /* ReaderViewModel.swift */; };
+		26B83AA6E66364ED584C2AD8 /* ExploreTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8F0F8712266ECDBBF706F3D /* ExploreTabView.swift */; };
 		2C303D912F17085E3E260F07 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E6537BF4628DEF626918C5 /* RootView.swift */; };
 		30BDABA2D45295B493FFBDB6 /* RssSourcesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 237FEC324475DA8D6348E274 /* RssSourcesViewModel.swift */; };
 		44C5925C1FC0490278CE7BC2 /* BookSourceEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE63FFC856662FE1DD0696CC /* BookSourceEngine.swift */; };
 		555175F2CA43135AD7BB4B0E /* ReaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7405646143B9D35F2048813 /* ReaderView.swift */; };
 		5DD9EDF3951F4C0DE03AA6A4 /* LegadoAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29854164D507F71EC5980DB2 /* LegadoAPIClient.swift */; };
 		61BE133309CCB292E6748A9A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B25C2245A61DEC487D09B531 /* Assets.xcassets */; };
+		61DCD01212E08A1ADDF327E6 /* DiscoverTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF51C3B99A8A49C4D68E9799 /* DiscoverTabView.swift */; };
 		66254D4B62ADE60D876BC123 /* LocalRssViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751430E72258DD82CFB9D88E /* LocalRssViewModel.swift */; };
 		73C77E8DB72AE98C0D4DABA7 /* LocalRssFeedStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838A54917F60221DFBD09CAD /* LocalRssFeedStore.swift */; };
+		776CDBD5C40F82845F8E8B41 /* MineTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B177A7197A9D5113A86C69 /* MineTabView.swift */; };
 		80630EB6E76C7B7C7A94C232 /* BookshelfView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02397A1D32F5CF838778925 /* BookshelfView.swift */; };
 		934C5BE455C4B90E588A737B /* ServerConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F969D3B52078F456BF5F4C /* ServerConfig.swift */; };
+		A2127A92174842B5465E9029 /* BookshelfTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC7109156D990C6592ECA133 /* BookshelfTabView.swift */; };
 		AB7759138AB34C3BC78DBB28 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = A63C3F40B1FE614F4EB8F0FA /* Book.swift */; };
 		B764751D74FD84EA5A0861B8 /* LegadoiPadApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D4011AE0FC3A5C3EA216069 /* LegadoiPadApp.swift */; };
 		BA9D25F1E91B52A1CC50EF30 /* ConnectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49603A203E6216484229AF2 /* ConnectionView.swift */; };
@@ -44,14 +49,19 @@
 		751430E72258DD82CFB9D88E /* LocalRssViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalRssViewModel.swift; sourceTree = "<group>"; };
 		8075D094B71E4C1254761F2A /* RuleEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RuleEngine.swift; sourceTree = "<group>"; };
 		838A54917F60221DFBD09CAD /* LocalRssFeedStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalRssFeedStore.swift; sourceTree = "<group>"; };
+		96B177A7197A9D5113A86C69 /* MineTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineTabView.swift; sourceTree = "<group>"; };
 		A0E6537BF4628DEF626918C5 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		A63C3F40B1FE614F4EB8F0FA /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 		B25C2245A61DEC487D09B531 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B31305B9747BEF50B5BA92F0 /* LocalRssFeedsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalRssFeedsView.swift; sourceTree = "<group>"; };
 		BE63FFC856662FE1DD0696CC /* BookSourceEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookSourceEngine.swift; sourceTree = "<group>"; };
+		C6B548FB7B189FF3A22B2F38 /* LocalBookshelfStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalBookshelfStore.swift; sourceTree = "<group>"; };
 		CCB61D29087C308115B6066E /* LegadoiPad.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = LegadoiPad.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D02397A1D32F5CF838778925 /* BookshelfView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookshelfView.swift; sourceTree = "<group>"; };
 		D4F969D3B52078F456BF5F4C /* ServerConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerConfig.swift; sourceTree = "<group>"; };
+		D8F0F8712266ECDBBF706F3D /* ExploreTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreTabView.swift; sourceTree = "<group>"; };
+		DC7109156D990C6592ECA133 /* BookshelfTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookshelfTabView.swift; sourceTree = "<group>"; };
+		DF51C3B99A8A49C4D68E9799 /* DiscoverTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverTabView.swift; sourceTree = "<group>"; };
 		F49603A203E6216484229AF2 /* ConnectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionView.swift; sourceTree = "<group>"; };
 		F7405646143B9D35F2048813 /* ReaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReaderView.swift; sourceTree = "<group>"; };
 		F7C3B624079018E36E07F299 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
@@ -69,6 +79,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		30FFE53D3E1F0361D5D4BB70 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				DC7109156D990C6592ECA133 /* BookshelfTabView.swift */,
+				DF51C3B99A8A49C4D68E9799 /* DiscoverTabView.swift */,
+				D8F0F8712266ECDBBF706F3D /* ExploreTabView.swift */,
+				96B177A7197A9D5113A86C69 /* MineTabView.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
 		382691ACE0836CB63891DF73 /* App */ = {
 			isa = PBXGroup;
 			children = (
@@ -102,6 +123,7 @@
 				7BAE74E13B28FD7607EE1EBD /* Bookshelf */,
 				EFFAC019AA5687B99BEC3562 /* BookSource */,
 				DA5DB42AC95945B378B0472D /* Connection */,
+				30FFE53D3E1F0361D5D4BB70 /* Home */,
 				3F3E79112437BBE306A16677 /* Reader */,
 				E536043ACB93AB388B523AFA /* Rss */,
 			);
@@ -137,6 +159,7 @@
 			isa = PBXGroup;
 			children = (
 				BE63FFC856662FE1DD0696CC /* BookSourceEngine.swift */,
+				C6B548FB7B189FF3A22B2F38 /* LocalBookshelfStore.swift */,
 				8075D094B71E4C1254761F2A /* RuleEngine.swift */,
 			);
 			path = BookSource;
@@ -283,14 +306,19 @@
 				AB7759138AB34C3BC78DBB28 /* Book.swift in Sources */,
 				44C5925C1FC0490278CE7BC2 /* BookSourceEngine.swift in Sources */,
 				DD8A58448A7DDB3F49689FEA /* BookSourceViews.swift in Sources */,
+				A2127A92174842B5465E9029 /* BookshelfTabView.swift in Sources */,
 				80630EB6E76C7B7C7A94C232 /* BookshelfView.swift in Sources */,
 				0FCC70684297A775E3136D38 /* BookshelfViewModel.swift in Sources */,
 				BA9D25F1E91B52A1CC50EF30 /* ConnectionView.swift in Sources */,
+				61DCD01212E08A1ADDF327E6 /* DiscoverTabView.swift in Sources */,
+				26B83AA6E66364ED584C2AD8 /* ExploreTabView.swift in Sources */,
 				5DD9EDF3951F4C0DE03AA6A4 /* LegadoAPIClient.swift in Sources */,
 				B764751D74FD84EA5A0861B8 /* LegadoiPadApp.swift in Sources */,
+				08579EAEB71491C6B6443898 /* LocalBookshelfStore.swift in Sources */,
 				73C77E8DB72AE98C0D4DABA7 /* LocalRssFeedStore.swift in Sources */,
 				E34A944938130D492B5949F3 /* LocalRssFeedsView.swift in Sources */,
 				66254D4B62ADE60D876BC123 /* LocalRssViewModel.swift in Sources */,
+				776CDBD5C40F82845F8E8B41 /* MineTabView.swift in Sources */,
 				555175F2CA43135AD7BB4B0E /* ReaderView.swift in Sources */,
 				13D0EECB828D4493C304D981 /* ReaderViewModel.swift in Sources */,
 				2C303D912F17085E3E260F07 /* RootView.swift in Sources */,

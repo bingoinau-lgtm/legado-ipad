@@ -31,7 +31,7 @@ struct BookshelfView: View {
                     description: Text("手机书架暂无书籍，或搜索无结果")
                 )
             } else {
-                List(filteredBooks, selection: $appState.selectedBook) { book in
+                List(filteredBooks, selection: $appState.selectedPhoneBook) { book in
                     BookRowView(book: book)
                         .tag(book)
                 }
