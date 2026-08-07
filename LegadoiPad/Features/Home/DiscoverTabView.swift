@@ -4,12 +4,14 @@ struct DiscoverTabView: View {
     @EnvironmentObject private var appState: AppState
     @ObservedObject private var sourceStore = BookSourceStore.shared
     @ObservedObject private var bookshelf = LocalBookshelfStore.shared
+    @ObservedObject private var historyStore = SearchHistoryStore.shared
 
     @State private var keyword = ""
     @State private var results: [SourceBook] = []
     @State private var isSearching = false
     @State private var errorMessage: String?
     @State private var toast: String?
+    @State private var hasSearched = false
 
     var body: some View {
         NavigationStack {
@@ -78,45 +80,107 @@ struct DiscoverTabView: View {
         } else if isSearching && results.isEmpty {
             ProgressView("搜索中…")
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
-        } else if let errorMessage, results.isEmpty {
-            ContentUnavailableView(
-                "搜索失败",
-                systemImage: "exclamationmark.triangle",
-                description: Text(errorMessage)
-            )
-        } else if results.isEmpty {
+        } else if !results.isEmpty {
+            resultsList
+        } else if let errorMessage, hasSearched {
+            VStack(spacing: 16) {
+                ContentUnavailableView(
+                    "搜索失败",
+                    systemImage: "exclamationmark.triangle",
+                    description: Text(errorMessage)
+                )
+                if !historyStore.keywords.isEmpty {
+                    historySection
+                }
+            }
+        } else {
+            historyOrEmpty
+        }
+    }
+
+    private var resultsList: some View {
+        List {
+            ForEach(results) { book in
+                HStack(spacing: 12) {
+                    Button {
+                        appState.readingBook = book
+                    } label: {
+                        DiscoverBookRow(book: book)
+                    }
+                    .buttonStyle(.plain)
+
+                    Button {
+                        addToShelf(book)
+                    } label: {
+                        Image(systemName: bookshelf.contains(book) ? "checkmark.circle.fill" : "plus.circle.fill")
+                            .font(.title2)
+                            .foregroundStyle(bookshelf.contains(book) ? .green : AppTheme.accent)
+                    }
+                    .buttonStyle(.plain)
+                }
+                .listRowBackground(Color.white)
+            }
+        }
+        .listStyle(.plain)
+        .scrollContentBackground(.hidden)
+        .padding(.bottom, 72)
+    }
+
+    @ViewBuilder
+    private var historyOrEmpty: some View {
+        if historyStore.keywords.isEmpty {
             ContentUnavailableView(
                 "发现好书",
                 systemImage: "safari",
                 description: Text("输入书名搜索，再添加到书架")
             )
         } else {
-            List {
-                ForEach(results) { book in
-                    HStack(spacing: 12) {
-                        Button {
-                            appState.readingBook = book
-                        } label: {
-                            DiscoverBookRow(book: book)
-                        }
-                        .buttonStyle(.plain)
+            historySection
+        }
+    }
 
-                        Button {
-                            addToShelf(book)
-                        } label: {
-                            Image(systemName: bookshelf.contains(book) ? "checkmark.circle.fill" : "plus.circle.fill")
-                                .font(.title2)
-                                .foregroundStyle(bookshelf.contains(book) ? .green : AppTheme.accent)
+    private var historySection: some View {
+        List {
+            Section {
+                ForEach(historyStore.keywords, id: \.self) { item in
+                    Button {
+                        keyword = item
+                        Task { await search() }
+                    } label: {
+                        HStack(spacing: 12) {
+                            Image(systemName: "clock.arrow.circlepath")
+                                .foregroundStyle(.secondary)
+                            Text(item)
+                                .foregroundStyle(.primary)
+                            Spacer()
+                            Image(systemName: "arrow.up.left")
+                                .font(.caption)
+                                .foregroundStyle(.tertiary)
                         }
-                        .buttonStyle(.plain)
                     }
-                    .listRowBackground(Color.white)
+                    .swipeActions(edge: .trailing, allowsFullSwipe: true) {
+                        Button(role: .destructive) {
+                            historyStore.remove(item)
+                        } label: {
+                            Label("删除", systemImage: "trash")
+                        }
+                    }
+                }
+            } header: {
+                HStack {
+                    Text("搜索历史")
+                    Spacer()
+                    Button("清空") {
+                        historyStore.clear()
+                    }
+                    .font(.caption)
+                    .foregroundStyle(AppTheme.accent)
                 }
             }
-            .listStyle(.plain)
-            .scrollContentBackground(.hidden)
-            .padding(.bottom, 88)
         }
+        .listStyle(.insetGrouped)
+        .scrollContentBackground(.hidden)
+        .padding(.bottom, 72)
     }
 
     private func search() async {
@@ -127,6 +191,8 @@ struct DiscoverTabView: View {
             return
         }
 
+        historyStore.add(key)
+        hasSearched = true
         isSearching = true
         errorMessage = nil
         defer { isSearching = false }
@@ -143,7 +209,6 @@ struct DiscoverTabView: View {
             }
         }
 
-        // Deduplicate by bookUrl
         var seen = Set<String>()
         results = collected.filter { seen.insert($0.bookUrl).inserted }
 
@@ -155,7 +220,7 @@ struct DiscoverTabView: View {
     private func addToShelf(_ book: SourceBook) {
         bookshelf.add(book)
         withAnimation {
-            toast = bookshelf.contains(book) ? "已加入书架" : "已更新"
+            toast = "已加入书架"
         }
         Task {
             try? await Task.sleep(nanoseconds: 1_200_000_000)
