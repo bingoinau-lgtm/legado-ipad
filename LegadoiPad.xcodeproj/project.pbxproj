@@ -20,6 +20,7 @@
 		61BE133309CCB292E6748A9A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B25C2245A61DEC487D09B531 /* Assets.xcassets */; };
 		61DCD01212E08A1ADDF327E6 /* DiscoverTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF51C3B99A8A49C4D68E9799 /* DiscoverTabView.swift */; };
 		66254D4B62ADE60D876BC123 /* LocalRssViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751430E72258DD82CFB9D88E /* LocalRssViewModel.swift */; };
+		6DC9A340A8E3603FD9B7E8D3 /* ReaderSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1571283D111578E28E3EBE37 /* ReaderSettings.swift */; };
 		73C77E8DB72AE98C0D4DABA7 /* LocalRssFeedStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838A54917F60221DFBD09CAD /* LocalRssFeedStore.swift */; };
 		776CDBD5C40F82845F8E8B41 /* MineTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B177A7197A9D5113A86C69 /* MineTabView.swift */; };
 		80630EB6E76C7B7C7A94C232 /* BookshelfView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02397A1D32F5CF838778925 /* BookshelfView.swift */; };
@@ -40,6 +41,7 @@
 /* Begin PBXFileReference section */
 		0EE2EF1189761BE589A0E81E /* BookshelfViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookshelfViewModel.swift; sourceTree = "<group>"; };
 		15004F6E3DFBFEF9A3251552 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		1571283D111578E28E3EBE37 /* ReaderSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReaderSettings.swift; sourceTree = "<group>"; };
 		1D4011AE0FC3A5C3EA216069 /* LegadoiPadApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegadoiPadApp.swift; sourceTree = "<group>"; };
 		237FEC324475DA8D6348E274 /* RssSourcesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RssSourcesViewModel.swift; sourceTree = "<group>"; };
 		241702F7F32AC4CE20F16C03 /* SearchHistoryStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchHistoryStore.swift; sourceTree = "<group>"; };
@@ -104,6 +106,7 @@
 		3F3E79112437BBE306A16677 /* Reader */ = {
 			isa = PBXGroup;
 			children = (
+				1571283D111578E28E3EBE37 /* ReaderSettings.swift */,
 				F7405646143B9D35F2048813 /* ReaderView.swift */,
 				2FB1182BD6BC19A86F213852 /* ReaderViewModel.swift */,
 			);
@@ -322,6 +325,7 @@
 				E34A944938130D492B5949F3 /* LocalRssFeedsView.swift in Sources */,
 				66254D4B62ADE60D876BC123 /* LocalRssViewModel.swift in Sources */,
 				776CDBD5C40F82845F8E8B41 /* MineTabView.swift in Sources */,
+				6DC9A340A8E3603FD9B7E8D3 /* ReaderSettings.swift in Sources */,
 				555175F2CA43135AD7BB4B0E /* ReaderView.swift in Sources */,
 				13D0EECB828D4493C304D981 /* ReaderViewModel.swift in Sources */,
 				2C303D912F17085E3E260F07 /* RootView.swift in Sources */,
